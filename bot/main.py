@@ -1,13 +1,14 @@
+import asyncio
+
 from bot.handlers import dp
 from bot.loader import bot
 
 from aiogram.types import (BotCommand,
                            BotCommandScopeAllPrivateChats)
 
-from aiogram import executor
 
 
-def start_bot(dp):
+async def start_bot(dp):
     # user_commands = [
     #     BotCommand('help', 'инструкция')
     # ]
@@ -18,8 +19,10 @@ def start_bot(dp):
         #     scope=BotCommandScopeAllPrivateChats())
         pass
 
-    executor.start_polling(dp, on_startup=startup)
+    # dp.start_polling(dp, on_startup=startup)
+    await dp.start_polling(bot, on_startup=startup)
 
 
 if __name__ == '__main__':
-    start_bot(dp)
+    # await start_bot(dp)
+    asyncio.run(start_bot(dp))
