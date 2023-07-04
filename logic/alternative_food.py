@@ -37,11 +37,10 @@ class AlternativeFood:
         except KeyError:
             return "Мне жаль, но я не нашел альтернативы для данного продукта. Может быть, вы попробуете что-то другое?"
 
-# Пример использования:
-
 
 
 if __name__ == '__main__':
 
-    alt_food = AlternativeFood('../data/food.txt')
+    alt_food = AlternativeFood('data/food.txt')
     print(alt_food.get_alternative('Сахар'))
+    print(alt_food.data.keys())
