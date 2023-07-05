@@ -1,4 +1,5 @@
 import asyncio
+import logging
 
 from bot.handlers import dp
 from bot.loader import bot
@@ -23,6 +24,8 @@ async def start_bot(dp):
     await dp.start_polling(bot, on_startup=startup)
 
 
+
 if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO)
     # await start_bot(dp)
     asyncio.run(start_bot(dp))
