@@ -16,3 +16,6 @@
 #
 #
 #     message.answer.assert_called_with(texts.GREETING_TEXT)
+
+
+# TODO прописать тест для хендлера
